@@ -1,0 +1,90 @@
+.container {
+  background-image: url('https://www.toptal.com/designers/subtlepatterns/uploads/repeated-square.png');
+  background-size: auto; /* Como é um padrão, ele se repete */
+  background-repeat: repeat;
+  background-position: top left;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: top;
+  justify-content: center;
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+  padding: 20px;
+  max-width: 400px;
+  margin: auto;
+}
+
+.top-image {
+  width: 100%; /* ou outro valor */
+  max-width: 300px; /* se quiser limitar o tamanho */
+  height: auto;
+  display: block;
+  margin: 0 auto 15px;
+}
+
+
+
+  .logo {
+    color: red;
+    font-size: 32px;
+    font-weight: bold;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  input[type='email'],
+  input[type='text'],
+  input[type='password'] {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .password-container {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .password-container input {
+    border: none;
+    outline: none;
+    flex: 1;
+    padding: 10px;
+  }
+
+  .password-container span {
+    padding: 10px;
+    cursor: pointer;
+  }
+
+  button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  button[disabled] {
+    background-color: gray;
+  }
+
+  .login-text a {
+    color: red;
+    text-decoration: none;
+    font-weight: bold;
+  }
