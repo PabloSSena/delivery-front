@@ -1,0 +1,23 @@
+<div class="background">
+    <div class="container">
+      <img src="../../assets/logo-removebg-preview.png" alt="Imagem de destaque" class="top-image" />
+      <h1 class="logo">TiTiTiDelivery</h1>
+      <h2>Edite seu perfil</h2>
+      <form [formGroup]="formEdicao" (ngSubmit)="onSubmit()">
+        <input type="text" formControlName="username" placeholder="Usuário" required />
+        <input type="text" formControlName="firstName" placeholder="Nome" required />
+        <input type="text" formControlName="lastName" placeholder="Sobrenome" />
+        <input type="email" formControlName="email" placeholder="Email" required />
+        <div class="password-container">
+          <input [type]="showPassword ? 'text' : 'password'" formControlName="password" placeholder="Senha" required />
+          <span (click)="togglePasswordVisibility()" class="eye-icon">👁️</span>
+        </div>
+        <br /><br />
+        <button type="submit" [disabled]="formEdicao.invalid">Salvar Alterações</button>
+      </form>
+      <p>Ou</p>
+      <p class="login-text">
+        Quer criar uma nova conta? <a href="#">Registrar</a>
+      </p>
+    </div>
+  </div>
