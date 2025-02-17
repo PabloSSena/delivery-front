@@ -1,0 +1,22 @@
+<div class="carousel">
+  <div
+    class="slides"
+    [style.transform]="'translateX(-' + currentIndex * 100 + '%)'"
+  >
+    @for (item of items; track item) {
+    <div class="slide">
+      <img [src]="item.image" alt="Prato do restaurante" />
+      <div class="description">{{ item.description }}</div>
+    </div>
+    }
+  </div>
+
+  <button class="nav prev" (click)="previous()">&lt;</button>
+  <button class="nav next" (click)="next()">&gt;</button>
+
+  <div class="indicators">
+    @for (item of items; track item; let i = $index) {
+    <button [class.active]="i === currentIndex" (click)="goTo(i)"></button>
+    }
+  </div>
+</div>
