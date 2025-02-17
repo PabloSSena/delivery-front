@@ -9,7 +9,7 @@ import { BaseResourceService } from '../shared/base-resource.service';
 export class UserService extends BaseResourceService<User>{
   
   constructor(protected override injector: Injector) {
-    super("http://localhost:8080/api/users", injector, User.fromJson)
-   }
+    super("http://localhost:3000/api/users", injector, User.fromJson)
+  }
   
 }

@@ -1,14 +1,16 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { UserService } from './user.service';
+import { UserService } from '../user.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-singup-user',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, HttpClientModule],
   templateUrl: './singup-user.component.html',
-  styleUrl: './singup-user.component.css'
+  styleUrl: './singup-user.component.css',
+  providers: [UserService]
 })
 export class SingupUserComponent {
   formCadastro: FormGroup;
@@ -16,11 +18,11 @@ export class SingupUserComponent {
 
   constructor(private fb: FormBuilder, private userService: UserService) {
     this.formCadastro = this.fb.group({
-      name: ['', [Validators.required]],
-      lastname: ['', [Validators.required]],
+      username: ['', [Validators.required]],
+      firstName: ['', [Validators.required]],
+      lastName: [''],
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
-      keepLoggedIn: [false],
     });
   }
 
@@ -30,7 +32,18 @@ export class SingupUserComponent {
 
   onSubmit() {
     if (this.formCadastro.valid) {
-      console.log(this.formCadastro.value);
+      const formValue = this.formCadastro.value;
+
+      this.userService.create(formValue).subscribe(
+        (response) => {
+          console.log('Usuário criado com sucesso:', response);
+        },
+        (error) => {
+          console.error('Erro ao criar usuário:', error);
+        }
+      );
+    } else {
+      console.log('Formulário inválido!');
     }
   }
 }
