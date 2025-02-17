@@ -4,12 +4,13 @@
     <h1 class="logo">TiTiTiDelivery</h1>
     <h2>Crie sua conta</h2>
     <form [formGroup]="formCadastro" (ngSubmit)="onSubmit()">
-      <input type="text" formControlName="name" placeholder="Nome" />
-      <input type="text" formControlName="lastname" placeholder="Sobrenome" />
-      <input type="email" formControlName="email" placeholder="Email" />
+      <input type="text" formControlName="username" placeholder="Usuário" required />
+      <input type="text" formControlName="firstName" placeholder="Nome" required />
+      <input type="text" formControlName="lastName" placeholder="Sobrenome" />
+      <input type="email" formControlName="email" placeholder="Email" required />
       <div class="password-container">
-        <input [type]="showPassword ? 'text' : 'password'" formControlName="password" placeholder="Senha" />
-        <span (click)="togglePasswordVisibility()">👁️</span>
+        <input [type]="showPassword ? 'text' : 'password'" formControlName="password" placeholder="Senha" required />
+        <span (click)="togglePasswordVisibility()" class="eye-icon">👁️</span>
       </div>
       <br /><br />
       <button type="submit" [disabled]="formCadastro.invalid">Criar Conta</button>
