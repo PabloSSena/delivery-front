@@ -1,9 +1,12 @@
 import { ApplicationConfig } from '@angular/core';
-import { provideRouter } from '@angular/router';
-
-import { routes } from './app.routes';
+import { provideRouter, Routes } from '@angular/router';
 import { provideClientHydration } from '@angular/platform-browser';
-import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { SingupUserComponent } from './singup-user/singup-user.component';
+
+const routes: Routes = [
+  { path: 'singUp', component: SingupUserComponent },
+];
+
 
 export const appConfig: ApplicationConfig = {
   providers: [provideRouter(routes), provideClientHydration(), provideAnimationsAsync()]
