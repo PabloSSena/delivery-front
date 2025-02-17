@@ -1,0 +1,21 @@
+<div class="background">
+    <div class="container">
+      <img src="../../assets/logo-removebg-preview.png" alt="Imagem de destaque" class="top-image" />
+      <h1 class="logo">TiTiTiDelivery</h1>
+      <h2>Entre na sua conta</h2>
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <input type="email" formControlName="email" placeholder="Email" />
+        <div class="password-container">
+          <input [type]="showPassword ? 'text' : 'password'" formControlName="password" placeholder="Senha" />
+          <span (click)="togglePasswordVisibility()">👁️</span>
+        </div>
+        <br /><br />
+        <button type="submit" [disabled]="loginForm.invalid">Entrar</button>
+      </form>
+      <br>
+      <p>Ou</p>
+      <p class="login-text">
+        <a routerLink="/register">Crie uma conta</a>
+      </p>
+    </div>
+  </div>
