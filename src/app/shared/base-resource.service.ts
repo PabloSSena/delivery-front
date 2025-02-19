@@ -24,6 +24,15 @@ export abstract class BaseResourceService<T extends BaseResourceModel> {
     )
   }
 
+  getAll(): Observable<T[]> {
+    const url = `${this.apiPath}`;
+
+    return this.http.get(this.apiPath).pipe(
+      map(this.jsonDataToResource.bind(this)),
+      catchError(this.handleError)      
+    )
+  }
+
   create(resource: T): Observable<T> {
     console.log("RESOURCE => ", resource);
     return this.http.post(this.apiPath, resource).pipe(
