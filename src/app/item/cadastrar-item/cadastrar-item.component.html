@@ -1,0 +1,16 @@
+<div class="container">
+    <h2>Cadastrar Item</h2>
+    <form [formGroup]="formCadastro" (ngSubmit)="onSubmit()">
+      <input type="text" formControlName="descricao" placeholder="Descrição" required />
+      <input type="number" formControlName="preco" placeholder="Preço" required />
+      <textarea formControlName="detalhes" placeholder="Detalhes" required></textarea>
+      
+      <div class="file-input-container">
+        <input type="file" id="fileInput" (change)="onFileChange($event)" required />
+        <label for="fileInput" class="file-input-label">Escolher Imagem</label>
+        <span class="file-name">{{ selectedFileName }}</span>
+      </div>
+      
+      <button type="submit" [disabled]="formCadastro.invalid">Cadastrar Item</button>
+    </form>
+  </div>
