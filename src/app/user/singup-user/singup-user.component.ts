@@ -23,6 +23,7 @@ export class SingupUserComponent {
       lastName: [''],
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
+      isGerente: [false]
     });
   }
 

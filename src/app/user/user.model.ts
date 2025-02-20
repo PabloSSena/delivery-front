@@ -6,6 +6,7 @@ export class User extends BaseResourceModel{
     lastName?: string | null;
     password?: string;
     email?: string;
+    isGerente?: boolean;
 
     static fromJson(jsonData: any): User{
         return Object.assign(new User(), jsonData);
