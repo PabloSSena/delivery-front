@@ -23,11 +23,19 @@ export class PerfilComponent implements OnInit {
   }
 
   loadUserData(): void {
-    const userId = this.route.snapshot.paramMap.get('id');
+    //const userId = this.route.snapshot.paramMap.get('id');
 
-    this.userService.get(userId).subscribe(data => {
+    /*this.userService.get(userId).subscribe(data => {
       this.user = data;
-    });
+    });*/
+    this.user = {
+      id: 1,
+      username: 'JohnDoe',
+      firstName: 'John',
+      lastName: 'Doe',
+      email: 'johnemail.com',
+      password: '123456',
+    };
   }
 
   addAddress(): void {

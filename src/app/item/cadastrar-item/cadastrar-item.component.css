@@ -1,4 +1,4 @@
-.cart-container {
+.container {
     background-image: url('https://www.toptal.com/designers/subtlepatterns/uploads/repeated-square.png');
     background-size: auto;
     background-repeat: repeat;
@@ -11,43 +11,67 @@
     padding: 20px;
     font-family: 'Arial', sans-serif;
     text-align: center;
-    max-width: 800px;
+    max-width: 400px;
     margin: auto;
   }
   
-  .cart-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 20px;
-    margin: 10px 0;
-    width: 100%;
-    box-sizing: border-box;
-  }
-  
-  .item-image {
-    width: 100%;
-    max-width: 300px;
-    height: auto;
-    display: block;
-    margin: 0 auto 15px;
-  }
-  
-  .item-details {
-    text-align: left;
-    width: 100%;
-  }
-  
-  .item-details h3 {
+  h2 {
     color: red;
     font-size: 24px;
     font-weight: bold;
   }
   
-  .item-details p {
-    margin: 5px 0;
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  input[type='text'],
+  input[type='number'],
+  textarea {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  textarea {
+    resize: vertical;
+  }
+  
+  .file-input-container {
+    position: relative;
+    width: 100%;
+  }
+  
+  input[type='file'] {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+  .file-input-label {
+    display: block;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    text-align: center;
+    cursor: pointer;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .file-name {
+    display: block;
+    margin-top: 5px;
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    color: #555;
   }
   
   button {
@@ -61,10 +85,4 @@
   
   button[disabled] {
     background-color: gray;
-  }
-  
-  .finalize-button {
-    margin-top: 20px;
-    width: 100%;
-    max-width: 300px;
   }
