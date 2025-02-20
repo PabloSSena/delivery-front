@@ -9,6 +9,8 @@ import { CadastrarItemComponent } from './item/cadastrar-item/cadastrar-item.com
 import { PagamentoComponent } from './pagamento/pagamento.component';
 import { LoginComponent } from './login/login.component';
 import { EnderecoComponent } from './endereco/endereco.component';
+import { provideHttpClient } from '@angular/common/http';
+
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -24,5 +26,5 @@ const routes: Routes = [
 ];
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideRouter(routes), provideClientHydration()]
+  providers: [provideRouter(routes), provideClientHydration(), provideHttpClient()]
 };

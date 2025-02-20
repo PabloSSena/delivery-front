@@ -3,8 +3,8 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { MatButtonModule } from '@angular/material/button';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 
 @Component({
@@ -15,7 +15,7 @@ import { RouterModule } from '@angular/router';
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
-    MatButtonModule,
+    RouterModule,
     RouterModule
   ],
   templateUrl: './login.component.html',
@@ -25,7 +25,7 @@ export class LoginComponent {
   loginForm: FormGroup = new FormGroup({});
   showPassword = false;
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private http: HttpClient, private router: Router) {}
 
   ngOnInit(): void {
     this.loginForm = this.fb.group({
@@ -35,9 +35,16 @@ export class LoginComponent {
   }
 
   onSubmit(): void {
-    if (this.loginForm.valid) {
-      console.log('Formulário enviado', this.loginForm.value);
-      // Aqui você pode adicionar a lógica para autenticar o usuário
+    if(this.loginForm.valid) {
+      this.http.post('http://localhost:3000/api/auth', this.loginForm.value).subscribe(
+        (response: any) => {
+          console.log('Usuário logado com sucesso:', response);
+          localStorage.setItem('access_token', response.access_token);
+          this.router.navigate(['/home']);
+        }, 
+        (error) => {
+          console.error('Erro ao logar usuário:', error);
+        });
     }
   }
 
