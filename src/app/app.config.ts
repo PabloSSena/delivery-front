@@ -7,17 +7,18 @@ import { CarrinhoComponent } from './item/carrinho/carrinho.component';
 import { PerfilComponent } from './user/perfil/perfil.component';
 import { CadastrarItemComponent } from './item/cadastrar-item/cadastrar-item.component';
 import { PagamentoComponent } from './pagamento/pagamento.component';
+import { HomeComponent } from './components/home/home.component';
 
 const routes: Routes = [
+  { path: '', component: HomeComponent },
   { path: 'singUp', component: SingupUserComponent },
   { path: 'edit/:id', component: EditUserComponent },
   { path: 'perfil/:id', component: PerfilComponent },
   { path: 'carrinho', component: CarrinhoComponent },
   { path: 'cadastrarItem', component: CadastrarItemComponent },
   { path: 'pagamento', component: PagamentoComponent },
-
 ];
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideRouter(routes), provideClientHydration()]
+  providers: [provideRouter(routes), provideClientHydration()],
 };
