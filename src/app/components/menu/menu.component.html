@@ -1,17 +1,18 @@
-<h1 class="title">Cardápio do Chef 👩🏾‍🍳</h1>
-
-@for (item of menuItems; track item) {
-<div class="cardapio">
-  <h2 class="item-name">{{ item.nome }}</h2>
-  <div>
-    <img [src]="item.img" alt="Prato do restaurante" />
-    <div class="items">
-      <span class="descricao">{{ item.descricao }}</span>
-      <span class="preco">R${{ item.preco.toFixed(2) }}</span>
+<div class="cart-container">
+  <h1 class="title">Cardápio do Chef 👩🏾‍🍳</h1>
+  @for (item of menuItems; track item) {
+  <div class="cardapio">
+    <h2 class="item-name">{{ item.nome }}</h2>
+    <div>
+      <img [src]="item.imagem" alt="Prato do restaurante" />
+      <div class="items">
+        <span class="descricao">{{ item.descricao }}</span>
+        <span class="preco">R${{ item.preco.toFixed(2) }}</span>
+      </div>
+      <a>
+        <button (click)="addToCart()" class="add-to-cart">+</button>
+      </a>
     </div>
-    <a>
-      <button class="add-to-cart">+</button>
-    </a>
   </div>
+  }
 </div>
-}
