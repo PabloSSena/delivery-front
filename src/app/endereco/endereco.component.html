@@ -1,0 +1,29 @@
+<div class="background">
+    <div class="container">
+      <img src="../../assets/logo-removebg-preview.png" alt="Imagem de destaque" class="top-image" />
+      <h1 class="logo">TiTiTiDelivery</h1>
+      <h2>Cadastrar Endereço</h2>
+      <form [formGroup]="addressForm" (ngSubmit)="onSubmit()">
+        <input type="text" formControlName="street" placeholder="Rua" />
+          <input type="text" formControlName="number" placeholder="Número" style="flex: 1;" />
+          <input type="text" formControlName="complement" placeholder="Complemento" style="flex: 2;" />
+        <input type="text" formControlName="neighborhood" placeholder="Bairro" />
+          <input type="text" formControlName="city" placeholder="Cidade" style="flex: 2;" />
+
+        <select formControlName="state" style="flex: 1;" class="select" >
+            <option value="" disabled selected>Estado</option>
+            <option *ngFor="let state of states" [value]="state">{{ state }}</option>
+        </select>
+
+          
+        <input type="text" formControlName="zipCode" placeholder="CEP" />
+        
+        <br><br>
+        <button type="submit" [disabled]="addressForm.invalid">Salvar Endereço</button>
+      </form>
+      <br>
+      <p class="login-text">
+        <a routerLink="/account">Voltar para Minha Conta</a>
+      </p>
+    </div>
+  </div>
