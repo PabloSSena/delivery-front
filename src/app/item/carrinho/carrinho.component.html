@@ -9,6 +9,7 @@
       <p>Preço: {{ item.preco | currency }}</p>
     </div>
   </div>
-  <button class="finalize-button" (click)="finalizeOrder()">Finalizar Pedido - Total: {{ total | currency }}</button>
-  <app-navigation></app-navigation>
+  <button class="finalize-button" (click)="finalizeOrder()">
+    Finalizar Pedido - Total: {{ total | currency }}
+  </button>
 </div>

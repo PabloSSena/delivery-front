@@ -1,0 +1,52 @@
+.title {
+  font-size: 2rem;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.item-name {
+  text-align: center;
+  margin-bottom: 0px;
+}
+.cardapio {
+  padding: 0px;
+  margin: 20px;
+}
+
+.cardapio div {
+  display: flex;
+}
+
+.cardapio div img {
+  border-radius: 10px;
+  width: 200px;
+  height: 150px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+.items {
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+  margin: 0 10px;
+  align-items: start;
+  justify-content: space-around;
+  
+}
+
+.add-to-cart {
+  border-radius: 8px;
+  background-color: red;
+  font-size: 16px;
+  color: white;
+  width: 24px;
+  height: 26px;
+  cursor: pointer;
+  border: none;
+}
+
+.cardapio div a {
+  margin: auto;
+}
+

@@ -8,9 +8,11 @@ import { PerfilComponent } from './user/perfil/perfil.component';
 import { CadastrarItemComponent } from './item/cadastrar-item/cadastrar-item.component';
 import { PagamentoComponent } from './pagamento/pagamento.component';
 import { HomeComponent } from './components/home/home.component';
+import { MenuComponent } from './components/menu/menu.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
+  { path: 'cardapio', component: MenuComponent },
   { path: 'singUp', component: SingupUserComponent },
   { path: 'edit/:id', component: EditUserComponent },
   { path: 'perfil/:id', component: PerfilComponent },
