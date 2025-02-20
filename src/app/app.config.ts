@@ -11,7 +11,7 @@ import { PagamentoComponent } from './pagamento/pagamento.component';
 const routes: Routes = [
   { path: 'singUp', component: SingupUserComponent },
   { path: 'edit/:id', component: EditUserComponent },
-  { path: 'perfil', component: PerfilComponent },
+  { path: 'perfil/:id', component: PerfilComponent },
   { path: 'carrinho', component: CarrinhoComponent },
   { path: 'cadastrarItem', component: CadastrarItemComponent },
   { path: 'pagamento', component: PagamentoComponent },

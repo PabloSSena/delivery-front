@@ -1,10 +1,11 @@
-<div class="perfil-container">
-    <h2>Perfil do Usuário</h2>
-    <div *ngIf="user">
-      <p><strong>Usuário:</strong> {{ user.username }}</p>
-      <p><strong>Nome:</strong> {{ user.firstName }}</p>
-      <p><strong>Sobrenome:</strong> {{ user.lastName }}</p>
-      <p><strong>Email:</strong> {{ user.email }}</p>
-    </div>
-    <button (click)="addAddress()">Adicionar Endereço</button>
+<div class="container">
+  <h2>Perfil do Usuário</h2>
+  <div *ngIf="user" class="user-details">
+    <p><strong>Usuário:</strong> {{ user.username }}</p>
+    <p><strong>Nome:</strong> {{ user.firstName }}</p>
+    <p><strong>Sobrenome:</strong> {{ user.lastName }}</p>
+    <p><strong>Email:</strong> {{ user.email }}</p>
   </div>
+  <button (click)="addAddress()">Adicionar Endereço</button>
+  <button *ngIf="isGerente" (click)="navigateToCadastrarItem()">Cadastrar Item</button>
+</div>

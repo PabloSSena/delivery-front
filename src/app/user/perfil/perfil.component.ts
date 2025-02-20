@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { UserService } from '../user.service';
 import { User } from '../user.model';
 import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-perfil',
@@ -15,31 +16,29 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class PerfilComponent implements OnInit {
   user: User | undefined;
+  isGerente: boolean | undefined; 
 
-  constructor(private userService: UserService, private route: ActivatedRoute) {}
+  constructor(private userService: UserService, private route: ActivatedRoute, private router : Router) {}
 
   ngOnInit(): void {
     this.loadUserData();
   }
 
   loadUserData(): void {
-    //const userId = this.route.snapshot.paramMap.get('id');
+    const userId = this.route.snapshot.paramMap.get('id');
 
-    /*this.userService.get(userId).subscribe(data => {
+    this.userService.get(userId).subscribe(data => {
       this.user = data;
-    });*/
-    this.user = {
-      id: 1,
-      username: 'JohnDoe',
-      firstName: 'John',
-      lastName: 'Doe',
-      email: 'johnemail.com',
-      password: '123456',
-    };
+      this.isGerente = this.user.isGerente;
+    });
   }
 
   addAddress(): void {
-    // Lógica para adicionar endereço
     console.log('Adicionar endereço');
   }
+
+  navigateToCadastrarItem(): void {
+    this.router.navigate(['/cadastrarItem']);
+  }
+
 }
