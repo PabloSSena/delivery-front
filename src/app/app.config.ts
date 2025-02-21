@@ -10,9 +10,12 @@ import { PagamentoComponent } from './pagamento/pagamento.component';
 import { LoginComponent } from './login/login.component';
 import { EnderecoComponent } from './endereco/endereco.component';
 import { provideHttpClient } from '@angular/common/http';
-
+import { HomeComponent } from './components/home/home.component';
+import { MenuComponent } from './components/menu/menu.component';
 
 const routes: Routes = [
+  { path: '', component: HomeComponent },
+  { path: 'cardapio', component: MenuComponent },
   { path: 'login', component: LoginComponent },
   { path: 'singUp', component: SingupUserComponent },
   { path: 'edit/:id', component: EditUserComponent },
@@ -27,4 +30,5 @@ const routes: Routes = [
 
 export const appConfig: ApplicationConfig = {
   providers: [provideRouter(routes), provideClientHydration(), provideHttpClient()]
+
 };

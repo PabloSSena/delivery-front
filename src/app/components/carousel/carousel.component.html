@@ -5,7 +5,9 @@
   >
     @for (item of items; track item) {
     <div class="slide">
-      <img [src]="item.image" alt="Prato do restaurante" />
+      <a [routerLink]="['/carrinho']">
+        <img [src]="item.image" alt="Prato do restaurante" />
+      </a>
       <div class="description">{{ item.description }}</div>
     </div>
     }
