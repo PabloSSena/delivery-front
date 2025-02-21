@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 export interface CarouselItem {
   image: string;
@@ -8,7 +9,7 @@ export interface CarouselItem {
 @Component({
   selector: 'app-carousel',
   standalone: true,
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './carousel.component.html',
   styleUrl: './carousel.component.css',
 })

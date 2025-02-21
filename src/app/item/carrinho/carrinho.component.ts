@@ -4,11 +4,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { ItemService } from '../item.service';
 import { Item } from '../item.model';
 import { Router } from '@angular/router';
+import { NavigationComponent } from '../../components/navigation/navigation.component';
 
 @Component({
   selector: 'app-carrinho',
   standalone: true,
-  imports: [CommonModule, HttpClientModule],
+  imports: [CommonModule, HttpClientModule, NavigationComponent],
   templateUrl: './carrinho.component.html',
   styleUrls: ['./carrinho.component.css'],
   providers: [ItemService]
