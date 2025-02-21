@@ -27,12 +27,12 @@ export class CarrinhoComponent implements OnInit {
 
   getItens(): void {
   this.itemService.getAll().subscribe(items => {
-      this.cartItems = items.filter(item => item.carrinho);
+      this.cartItems = items.filter(item => item.on_little_car);
     });
   }
 
   getTotal(): void {
-   this.total = this.cartItems.reduce((total, item) => total + item.preco!, 0);
+   this.total = this.cartItems.reduce((total, item) => total + item.price!, 0);
   }
 
   finalizeOrder(): void {

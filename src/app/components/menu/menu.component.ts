@@ -10,9 +10,8 @@ import { NavigationComponent } from '../navigation/navigation.component';
     NavigationComponent
   ],
   templateUrl: './menu.component.html',
-  styleUrl: './menu.component.css',
+  styleUrls: ['./menu.component.css'],
   providers: [ItemService]
-  
 })
 export class MenuComponent {
   @Input() menuItems: Item[] = [
@@ -60,7 +59,14 @@ export class MenuComponent {
     },
   ];
 
-  addToCart() {
-    Item.fromJson(Item).carrinho = true
+  constructor(private itemService: ItemService) {}
+
+  addToCart(item: Item) {
+    const updatedItem = { ...item, on_little_car: true };
+    console.log(item.id, updatedItem);
+    this.itemService.update(item.id, updatedItem).subscribe(response => {
+      console.log('Item updated:', response);
+    });
   }
+
 }

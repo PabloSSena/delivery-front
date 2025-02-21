@@ -1,9 +1,9 @@
 <div class="container">
     <h2>Cadastrar Item</h2>
     <form [formGroup]="formCadastro" (ngSubmit)="onSubmit()">
-      <input type="text" formControlName="descricao" placeholder="Descrição" required />
-      <input type="number" formControlName="preco" placeholder="Preço" required />
-      <textarea formControlName="detalhes" placeholder="Detalhes" required></textarea>
+      <input type="text" formControlName="name" placeholder="Nome" required />
+      <input type="text" formControlName="description" placeholder="Descrição" required />
+      <input type="number" formControlName="price" placeholder="Preço" required />
       
       <div class="file-input-container">
         <input type="file" id="fileInput" (change)="onFileChange($event)" required />

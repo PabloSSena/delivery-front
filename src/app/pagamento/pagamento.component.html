@@ -1,10 +1,12 @@
 <div class="payment-container">
-    <h2 class="payment-title">Pagamento</h2>
-    <p><strong>Valor Total:</strong> {{ total | currency:'BRL' }}</p>
-    <div class="qr-code">
-      <img [src]="qrCodeUrl" alt="QR Code para pagamento" />
-    </div>
-    <br><br>
-    <p>Para concluir seu pedido, faça o pagamento via PIX utilizando o QR code abaixo:</p>
+  <h2 class="payment-title">Pagamento</h2>
+  <p><strong>Valor Total:</strong> {{ total | currency:'BRL' }}</p>
+  <div class="qr-code">
+    <img [src]="qrCodeUrl" alt="QR Code para pagamento" />
   </div>
-  <app-navigation></app-navigation>
+  <br><br>
+  <p>Para concluir seu pedido, faça o pagamento via PIX utilizando o QR code abaixo:</p>
+  <button class="payment-button" (click)="pagamentoFeito()">Pago</button>
+</div>
+<app-navigation></app-navigation>
+

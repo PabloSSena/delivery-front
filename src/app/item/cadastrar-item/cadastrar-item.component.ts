@@ -24,9 +24,9 @@ export class CadastrarItemComponent implements OnInit {
 
   ngOnInit(): void {
     this.formCadastro = this.fb.group({
-      descricao: ['', Validators.required],
-      preco: ['', [Validators.required, Validators.min(0)]],
-      detalhes: ['', Validators.required],
+      name: ['', Validators.required],
+      description: ['', [Validators.required, Validators.min(0)]],
+      preco: ['', Validators.required],
       imagem: ['', Validators.required]
     });
   }
@@ -50,10 +50,11 @@ export class CadastrarItemComponent implements OnInit {
   onSubmit(): void {
     if (this.formCadastro.valid && this.base64Image) {
       const item: Item = {
-        descricao: this.formCadastro.get('descricao')?.value,
-        preco: this.formCadastro.get('preco')?.value,
-        detalhes: this.formCadastro.get('detalhes')?.value,
-        imagem: this.base64Image
+        name: this.formCadastro.get('name')?.value,
+        description: this.formCadastro.get('description')?.value,
+        price: this.formCadastro.get('price')?.value,
+        imageUrl: this.base64Image,
+        on_little_car: false
       };
 
       this.itemService.create(item).subscribe(response => {
