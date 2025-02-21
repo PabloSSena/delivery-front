@@ -1,27 +1,26 @@
-# DeliveryFront
+# Delivery API
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.7.
+Este projeto implementa a API de Delivery com o NestJS, e utilizamos o padrão de projeto **Observer** para enviar notificações por e-mail aos usuários quando um pedido é processado.
 
-## Development server
+## Como funciona o Padrão Observer
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+O padrão **Observer** permite que um objeto (o sujeito) notifique vários objetos (observadores) quando algo muda. Neste caso, o sujeito é o serviço que processa o pedido, e os observadores são os objetos que recebem as notificações (e-mail).
 
-## Code scaffolding
+## Tecnologias Utilizadas
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **NestJS**: Framework para construção da API.
+- **TypeScript**: Linguagem utilizada para o desenvolvimento.
+- **Banco de dados**: PostgresSql, hospedado no.
 
-## Build
+## Como rodar o projeto
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+1. Clone este repositório:
 
-## Running unit tests
+   ```bash
+   git clone https://github.com/PabloSSena/delivery-front
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+   ```
 
-## Running end-to-end tests
+2. Baixe as dependencias com o comando "yarn" ou o comando "npm install".
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+3. Rode o projeto com "yarn start".
