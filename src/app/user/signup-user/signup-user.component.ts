@@ -6,11 +6,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
-  selector: 'app-singup-user',
+  selector: 'app-signup-user',
   standalone: true,
   imports: [CommonModule, ReactiveFormsModule, HttpClientModule],
-  templateUrl: './singup-user.component.html',
-  styleUrl: './singup-user.component.css',
+  templateUrl: './signup-user.component.html',
+  styleUrl: './signup-user.component.css',
   providers: [UserService]
 })
 export class SingupUserComponent {

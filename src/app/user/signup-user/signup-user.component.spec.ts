@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SingupUserComponent } from './singup-user.component';
+import { SingupUserComponent } from './signup-user.component';
 
 describe('SingupUserComponent', () => {
   let component: SingupUserComponent;
