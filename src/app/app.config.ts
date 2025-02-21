@@ -1,7 +1,7 @@
 import { ApplicationConfig } from '@angular/core';
 import { provideRouter, Routes } from '@angular/router';
 import { provideClientHydration } from '@angular/platform-browser';
-import { SingupUserComponent } from './user/singup-user/singup-user.component';
+import { SingupUserComponent } from './user/signup-user/signup-user.component';
 import { EditUserComponent } from './user/edit-user/edit-user.component';
 import { CarrinhoComponent } from './item/carrinho/carrinho.component';
 import { PerfilComponent } from './user/perfil/perfil.component';
@@ -14,10 +14,10 @@ import { HomeComponent } from './components/home/home.component';
 import { MenuComponent } from './components/menu/menu.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: 'home', component: HomeComponent },
   { path: 'cardapio', component: MenuComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'singUp', component: SingupUserComponent },
+  { path: 'signUp', component: SingupUserComponent },
   { path: 'edit/:id', component: EditUserComponent },
   { path: 'perfil/:id', component: PerfilComponent },
   { path: 'carrinho', component: CarrinhoComponent },
