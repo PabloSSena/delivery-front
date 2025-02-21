@@ -40,7 +40,8 @@ export class LoginComponent {
         (response: any) => {
           console.log('Usuário logado com sucesso:', response);
           localStorage.setItem('access_token', response.access_token);
-          this.router.navigate(['/home']);
+          localStorage.setItem('user_id', response.user_id);
+          this.router.navigate(['restaurant/home']);
         }, 
         (error) => {
           console.error('Erro ao logar usuário:', error);

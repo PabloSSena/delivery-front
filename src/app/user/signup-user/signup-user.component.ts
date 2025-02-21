@@ -39,7 +39,7 @@ export class SingupUserComponent {
       this.userService.create(formValue).subscribe(
         (response) => {
           console.log('Usuário criado com sucesso:', response);
-            this.router.navigate(['/login']);
+            this.router.navigate(['/auth/login']);
         },
         (error) => {
           console.error('Erro ao criar usuário:', error);

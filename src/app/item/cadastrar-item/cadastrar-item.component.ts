@@ -4,11 +4,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { ItemService } from '../item.service';
 import { Item } from '../item.model';
+import { NavigationComponent } from '../../components/navigation/navigation.component';
 
 @Component({
   selector: 'app-cadastrar-item',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, HttpClientModule],
+  imports: [CommonModule, ReactiveFormsModule, HttpClientModule,NavigationComponent],
   templateUrl: './cadastrar-item.component.html',
   styleUrls: ['./cadastrar-item.component.css'],
   providers: [ItemService]

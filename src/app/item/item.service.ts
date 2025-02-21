@@ -9,7 +9,7 @@ import { BaseResourceService } from '../shared/base-resource.service';
 export class ItemService extends BaseResourceService<Item>{
   
   constructor(protected override injector: Injector) {
-    super("http://localhost:3000/api/itens", injector, Item.fromJson)
+    super("http://localhost:3000/api/menu-items", injector, Item.fromJson)
   }
   
 }

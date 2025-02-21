@@ -1,11 +1,12 @@
 import { CurrencyPipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { NavigationComponent } from '../components/navigation/navigation.component';
 
 @Component({
   selector: 'app-pagamento',
   standalone: true,
-  imports: [ CurrencyPipe ],
+  imports: [ CurrencyPipe, NavigationComponent ],
   templateUrl: './pagamento.component.html',
   styleUrl: './pagamento.component.css'
 })
