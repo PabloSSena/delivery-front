@@ -3,13 +3,13 @@ import {
   CarouselComponent,
   CarouselItem,
 } from '../carousel/carousel.component';
-import { RouterLink } from '@angular/router';
 import { NavigationComponent } from '../navigation/navigation.component';
+
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CarouselComponent, RouterLink, NavigationComponent],
+  imports: [CarouselComponent, NavigationComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })

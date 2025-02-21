@@ -5,11 +5,12 @@ import { UserService } from '../user.service';
 import { User } from '../user.model';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
+import { NavigationComponent } from '../../components/navigation/navigation.component';
 
 @Component({
   selector: 'app-perfil',
   standalone: true,
-  imports: [CommonModule, HttpClientModule],
+  imports: [CommonModule, HttpClientModule, NavigationComponent],
   templateUrl: './perfil.component.html',
   styleUrls: ['./perfil.component.css'],
   providers: [UserService]

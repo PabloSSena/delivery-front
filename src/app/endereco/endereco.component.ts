@@ -7,21 +7,25 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { Router, RouterModule } from '@angular/router';
 import { AddressService } from './shared/endereco.service';
+import { HttpClientModule } from '@angular/common/http';
+import { NavigationComponent } from "../components/navigation/navigation.component";
 
 @Component({
   selector: 'app-endereco',
   standalone: true,
-  imports: [    
-      CommonModule,
-      ReactiveFormsModule,
-      MatCardModule,
-      MatFormFieldModule,
-      MatInputModule,
-      MatButtonModule,
-      RouterModule
-    ],
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    RouterModule,
+    NavigationComponent
+],
   templateUrl: './endereco.component.html',
-  styleUrl: './endereco.component.css'
+  styleUrl: './endereco.component.css',
+  providers: [AddressService]
 })
 export class EnderecoComponent {
 

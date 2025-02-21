@@ -1,11 +1,14 @@
 import { Component, Input } from '@angular/core';
 import { Item } from '../../item/item.model';
 import { ItemService } from '../../item/item.service';
+import { NavigationComponent } from '../navigation/navigation.component';
 
 @Component({
   selector: 'app-menu',
   standalone: true,
-  imports: [],
+  imports: [
+    NavigationComponent
+  ],
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.css'],
   providers: [ItemService]
