@@ -7,7 +7,7 @@ export class Item extends BaseResourceModel{
     preco!: number;
     detalhes?: string;
     imagem?: string;
-    carrinho?: boolean;
+    on_little_car?: boolean;
 
     static fromJson(jsonData: any): Item{
         return Object.assign(new Item(), jsonData);

@@ -1,6 +1,5 @@
 import { Component, Input } from '@angular/core';
 import { Item } from '../../item/item.model';
-import { CarrinhoComponent } from '../../item/carrinho/carrinho.component';
 import { ItemService } from '../../item/item.service';
 
 @Component({
@@ -8,9 +7,8 @@ import { ItemService } from '../../item/item.service';
   standalone: true,
   imports: [],
   templateUrl: './menu.component.html',
-  styleUrl: './menu.component.css',
+  styleUrls: ['./menu.component.css'],
   providers: [ItemService]
-  
 })
 export class MenuComponent {
   @Input() menuItems: Item[] = [
@@ -58,7 +56,14 @@ export class MenuComponent {
     },
   ];
 
-  addToCart() {
-    Item.fromJson(Item).carrinho = true
+  constructor(private itemService: ItemService) {}
+
+  addToCart(item: Item) {
+    const updatedItem = { ...item, on_little_car: true };
+    console.log(item.id, updatedItem);
+    this.itemService.update(item.id, updatedItem).subscribe(response => {
+      console.log('Item updated:', response);
+    });
   }
+
 }

@@ -52,7 +52,8 @@ export class CadastrarItemComponent implements OnInit {
         descricao: this.formCadastro.get('descricao')?.value,
         preco: this.formCadastro.get('preco')?.value,
         detalhes: this.formCadastro.get('detalhes')?.value,
-        imagem: this.base64Image
+        imagem: this.base64Image,
+        on_little_car: false
       };
 
       this.itemService.create(item).subscribe(response => {
