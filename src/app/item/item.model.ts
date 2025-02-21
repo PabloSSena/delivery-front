@@ -1,12 +1,10 @@
 import { BaseResourceModel } from "../shared/base-resource.model";
 
 export class Item extends BaseResourceModel{
-    nome?: string;
-    codigo?: number;
-    descricao?: string;
-    preco!: number;
-    detalhes?: string;
-    imagem?: string;
+    name?: string;
+    description?: string;
+    price!: number;
+    imageUrl?: string;
     on_little_car?: boolean;
 
     static fromJson(jsonData: any): Item{

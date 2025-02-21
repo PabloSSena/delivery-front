@@ -32,7 +32,7 @@ export class CarrinhoComponent implements OnInit {
   }
 
   getTotal(): void {
-   this.total = this.cartItems.reduce((total, item) => total + item.preco!, 0);
+   this.total = this.cartItems.reduce((total, item) => total + item.price!, 0);
   }
 
   finalizeOrder(): void {

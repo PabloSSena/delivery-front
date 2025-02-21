@@ -2,11 +2,10 @@
   <h2>Itens no Carrinho</h2>
   <div *ngIf="cartItems.length === 0">Nenhum item no carrinho.</div>
   <div *ngFor="let item of cartItems" class="cart-item">
-    <img [src]="item.imagem" alt="{{ item.descricao }}" class="item-image" />
+    <img [src]="item.imageUrl" alt="{{ item.name }}" class="item-image" />
     <div class="item-details">
-      <h3>{{ item.descricao }}</h3>
-      <p>{{ item.detalhes }}</p>
-      <p>Preço: {{ item.preco | currency }}</p>
+      <h3>{{ item.description }}</h3>
+      <p>Preço: {{ item.price | currency }}</p>
     </div>
   </div>
   <button class="finalize-button" (click)="finalizeOrder()">
