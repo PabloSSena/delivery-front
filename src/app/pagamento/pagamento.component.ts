@@ -1,6 +1,7 @@
 import { CurrencyPipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { ItemService } from '../item/item.service';
 
 @Component({
   selector: 'app-pagamento',
@@ -14,7 +15,7 @@ export class PagamentoComponent implements OnInit {
   total: number = 0;
   qrCodeUrl: string = '';
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute, private itemService: ItemService) {}
 
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
@@ -24,7 +25,16 @@ export class PagamentoComponent implements OnInit {
   }
 
   generateQrCode(): void {
-    // Substitua pela lógica para gerar o URL do QR code
     this.qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?data=Pagamento%20de%20R$${this.total}&size=200x200`;
+  }
+
+  pagamentoFeito(){
+    this.itemService.finalizeOrder().subscribe(
+      (response) => {
+        console.log('Pagamento realizado com sucesso:', response);
+      },
+      (error) => {
+        console.error('Erro ao realizar pagamento:', error);
+      })
   }
 }
